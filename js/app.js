@@ -339,7 +339,7 @@ function journeyCard(p) {
   if (p.example) return '';
   const now = stageOf(p), steps = C.JOURNEY.filter(j => j[0] !== 'coming' || p.med === 'none' || p.med === 'weekly' || p.med === 'daily');
   return `<div class="card"><h3>Your journey</h3><div class="list">${steps.map(j => `<div class="item" style="grid-template-columns:1fr auto"><span><strong>${j[1]}</strong><br><span class="small muted">${j[2]}</span></span>${j[0] === now ? '<span class="tag">You are here</span>' : ''}</div>`).join('')}</div>
-    ${p.goalReached ? `<p class="small muted">Goal reached on ${fmtDate(p.goalReached)}. Well done. Your plan now keeps building strength. <button class="link inline" data-act="goalundo">Not yet, undo</button></p>` : `<button class="btn ghost" data-act="goal">I have reached my goal weight</button>`}</div>`;
+    ${p.goalReached ? `<p class="small muted">Goal reached on ${fmtDate(p.goalReached)}. Well done. Your plan now keeps building strength. <button class="link inline" data-act="goalundo">Not yet, undo</button></p>` : `<button class="btn ghost" data-act="goalreached">I have reached my goal weight</button>`}</div>`;
 }
 
 function viewPlan() {
@@ -654,7 +654,7 @@ document.addEventListener('click', e => {
   if (a === 'skipex') { const l = log(); l.pos = (l.pos || 0) + 1; resetEx(); save(); go('session'); return; }
   if (a === 'loadup' || a === 'loaddown') { S.loads[val] = Math.max(0, (S.loads[val] || 0) + (a === 'loadup' ? 1 : -1)); save(); render(); return; }
   if (a === 'win') { S.wins.push({ d: TODAY, t: val }); save(); render(); return; }
-  if (a === 'goal') { S.profile.goalReached = TODAY; save(); msg = ''; render(); return; }
+  if (a === 'goalreached') { S.profile.goalReached = TODAY; save(); msg = ''; render(); return; }
   if (a === 'goalundo') { delete S.profile.goalReached; save(); render(); return; }
   if (a === 'postwin') { const t = document.getElementById('circlepost').value.trim(); if (t) { S.wins.push({ d: TODAY, t }); save(); msg = 'Saved to your wins.'; } render(); return; }
   if (a === 'sendmsg') { const t = document.getElementById('coachmsg').value.trim(); if (t) { S.msgs.push({ d: TODAY, t }); save(); msg = 'Message saved.'; if (C.LAUNCH.coachEmail) { msg = 'Your email app should have opened. Press send there.'; mail('A question for my coach', t + '\n\n' + S.profile.name); } } render(); return; }
