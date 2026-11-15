@@ -24,7 +24,7 @@ const levelUp = (e, p) => { const up = C.PROGRESS && C.PROGRESS[e[0]]; return up
 /* Last resort while filming: a suitable filmed stand-in for an exercise with no video yet. */
 const fill = e => { const f = (C.FILL || {})[e[0]]; return !filmed(e[0]) && f && filmed(f[0]) ? f : e; };
 
-function blockNo(p, today) { return today && p.start ? Math.floor((weekNo(p.start, today) - 1) / 4) : 0; }
+function blockNo(p, today) { return today && p && p.start ? Math.floor((weekNo(p.start, today) - 1) / 4) : 0; }
 
 function pick(slot, p, block) {
   const care = p.care || [];

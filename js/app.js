@@ -91,7 +91,7 @@ const routineRow = id => { const r = C.ROUTINES[id]; return `<button class="rowb
 /* ---------- screens ---------- */
 /* A small, static picture of the app for the landing page. Example data, not a real member. */
 function phoneMock() {
-  const days = [['Mon', 'walk', 'Walk'], ['Tue', 'strength done', 'Lift'], ['Wed', 'jab', 'Jab'], ['Thu', 'easy', 'Rest'], ['Fri', 'strength today', 'Lift'], ['Sat', 'walk', 'Walk'], ['Sun', 'strength', 'Lift']];
+  const days = [['Mon', 'walk', 'Walk'], ['Tue', 'strength done', 'Lift'], ['Wed', 'easy', 'Rest'], ['Thu', 'easy', 'Rest'], ['Fri', 'strength today', 'Lift'], ['Sat', 'walk', 'Walk'], ['Sun', 'strength', 'Lift']];
   return `<div class="phone" role="img" aria-label="The Strenda app showing an example member's week and today's strength session"><div class="phonein">
     <section class="stage"><div class="stagehead"><div><span class="pill">Week 3 · Foundations</span><h2>Hi Sam</h2><p class="soft small">2 more this week to keep your muscle.</p></div>${ring(1, 3)}</div>
       <div class="week">${days.map(d => `<div class="day ${d[1]}"><b>${d[0]}</b><i></i><span>${d[2]}</span></div>`).join('')}</div></section>
