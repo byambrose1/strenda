@@ -49,8 +49,12 @@ const chip = (act, val, cur, text) => `<button class="chip" data-act="${act}" da
 const tile = (act, val, cur, text, sub) => `<button class="tile" data-act="${act}" data-val="${val}" aria-pressed="${on(cur, val)}">${text}<small>${sub}</small></button>`;
 /* A video is a real player once its link is in js/videos.js. Until then it is a labelled placeholder. */
 function videoId(title) { const v = (typeof VIDEOS !== 'undefined' && VIDEOS[title]) || ''; const m = String(v).match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{6,})/); return m ? m[1] : /^[\w-]{6,}$/.test(v) ? v : ''; }
-const hasVideo = title => !!videoId(title);
+const hasVideo = title => !!(videoFile(title) || videoId(title));
+/* A plain video file hosted with the app (no YouTube branding): VIDEOS['Sit to stand'] = 'videos/sit-to-stand.mp4'. */
+const videoFile = title => { const v = (typeof VIDEOS !== 'undefined' && VIDEOS[title]) || ''; return /\.(mp4|webm|mov)$/i.test(v) ? v : ''; };
 function video(title, sub, cls) {
+  const file = videoFile(title);
+  if (file) return `<div class="video real"><video src="${file}" playsinline muted loop autoplay controls preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback" aria-label="${esc(title)}"></video></div>`;
   const id = videoId(title);
   if (id) return `<div class="video real"><iframe src="https://www.youtube-nocookie.com/embed/${id}?rel=0&playsinline=1" title="${esc(title)}" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe></div>`;
   return `<div class="video ${cls || ''}" role="img" aria-label="Video coming soon: ${title}"><span class="play"></span>${cls ? '' : `<strong>${title}</strong><small>${sub}</small>`}</div>`;
