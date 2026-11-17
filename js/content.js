@@ -27,6 +27,7 @@ const CONTENT = {
     'Split squat': [['Reverse lunge', 'Weights by your sides. Step one foot back, lower, push back up to standing. Swap legs.', 'l', ['knees', 'hips', 'balance']]],
     'Overhead press': [['Lateral raise', 'Weights by your sides. Lift your arms out to shoulder height, no higher. Lower slowly.', 'l', ['shoulders', 'balance']]],
     'Suitcase carry': [['Weighted march', 'Hand weights by your sides. March on the spot, standing tall.', 'hl', ['balance']]],
+    'Sit to stand': [['Bodyweight squat', 'Feet hip width, arms forward. Sit back and down as if to a chair, then stand tall.', '', ['knees', 'hips', 'balance', 'seated']]],
     'Seated march': [['Seated side taps', 'Weights on your thighs. Take one leg out to the side and back. Swap.', '', []]]
   },
   /* Stand-ins while a video is still to be filmed: exercise -> filmed exercise that does a similar job. Used only when the first has no video. */
