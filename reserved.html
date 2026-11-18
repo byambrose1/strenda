@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Your place is reserved: Strenda Club</title>
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Figtree:wght@400;600;700&display=swap">
+<script>
+/* Same settings as the home page. TIMES_FORM_URL: a short Tally form asking which group time suits them. */
+var TIMES_FORM_URL = '';
+var META_PIXEL_ID = '';
+var GOATCOUNTER = '';
+</script>
+<style>
+body{margin:0;background:#FBF3F7;color:#24102F;font:17px/1.55 "Figtree",system-ui,sans-serif}
+main{max-width:620px;margin:0 auto;padding:56px 22px 72px}
+h1,h2{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.08;margin:0}
+h1{font-size:2.6rem;letter-spacing:-.03em}h2{font-size:1.4rem;margin-top:36px}
+p{margin:12px 0 0}.muted{color:#6E5B77}
+.tick{width:64px;height:64px;border-radius:50%;background:#12957B;display:grid;place-items:center;margin-bottom:22px}
+.tick::after{content:"";width:22px;height:12px;border-left:4px solid #fff;border-bottom:4px solid #fff;transform:rotate(-45deg) translate(2px,-3px)}
+.card{background:#fff;border:1px solid #E8D9E6;border-radius:20px;padding:24px;margin-top:24px}
+.btn{display:inline-flex;min-height:52px;align-items:center;padding:0 24px;border-radius:999px;background:#C81A60;color:#fff;font-weight:700;text-decoration:none;margin-top:16px}
+ol{padding-left:22px;display:grid;gap:8px;margin:12px 0 0}
+a{color:#C81A60}
+</style>
+</head>
+<body>
+<main>
+  <div class="tick" aria-hidden="true"></div>
+  <h1>Your founding place is reserved.</h1>
+  <p>Thank you. You're one of the first 30 members of Strenda Club. A receipt for your &pound;10 is on its way by email.</p>
+
+  <div class="card">
+    <h2 style="margin-top:0">One thing to do now: choose your group time</h2>
+    <p class="muted">Monday 7.30pm, Tuesday 9.30am or Wednesday 7.30pm, plus the Saturday 9am club session (recorded). It takes two minutes.</p>
+    <a class="btn" id="times" href="#">Choose my group time</a>
+    <p class="muted" id="timesnote" style="font-size:.9rem">If none of the times work for you, say so in the form and we'll refund your &pound;10.</p>
+  </div>
+
+  <h2>What happens next</h2>
+  <ol>
+    <li><strong>December:</strong> we email you a short health check and the full terms.</li>
+    <li><strong>Early January:</strong> you confirm, and your first month is &pound;19 (your &pound;10 is already off). Then &pound;29 a month, guaranteed for 12 months. Cancel any time.</li>
+    <li><strong>Week of 5 January:</strong> you get your personal plan in the Strenda app and meet your group online.</li>
+    <li><strong>12 January:</strong> your group starts.</li>
+  </ol>
+
+  <h2>Changed your mind?</h2>
+  <p>That's fine. Reply to your receipt email any time before 12 January and we'll refund your &pound;10 in full within 5 working days.</p>
+
+  <p style="margin-top:36px"><a href="index.html">Back to Strenda Club</a></p>
+</main>
+<script>
+(function () {
+  var a = document.getElementById('times');
+  if (TIMES_FORM_URL) { a.href = TIMES_FORM_URL; a.target = '_blank'; a.rel = 'noopener'; }
+  else { a.removeAttribute('href'); a.textContent = 'Watch your inbox'; document.getElementById('timesnote').textContent = 'We will email you within a day to ask which time suits you. If none of them work, we will refund your £10.'; }
+  var ok = false; try { ok = localStorage.getItem('consent') === 'yes'; } catch (e) {}
+  if (META_PIXEL_ID && ok) { !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', META_PIXEL_ID); fbq('track', 'Purchase', { value: 10, currency: 'GBP' }); }
+  if (GOATCOUNTER) { var g = document.createElement('script'); g.async = true; g.src = '//gc.zgo.at/count.js'; g.setAttribute('data-goatcounter', 'https://' + GOATCOUNTER + '.goatcounter.com/count'); document.body.appendChild(g); }
+})();
+</script>
+</body>
+</html>
