@@ -1,8 +1,8 @@
 {
   "name": "Strenda",
   "short_name": "Strenda",
-  "description": "The strength and nutrition app for people on weight-loss medication.",
-  "start_url": "./",
+  "description": "Strenda Club: build strength with a small group and a real coach.",
+  "start_url": "./app.html",
   "display": "standalone",
   "background_color": "#FBF3F7",
   "theme_color": "#2A1038",
