@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Find your Strenda group</title>
+<meta name="description" content="Answer a few quick questions and save your founding place in Strenda Club. Free to save.">
+<link rel="icon" href="icons/icon-192.png">
+<meta name="theme-color" content="#2A1038">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<script>
+var FORM_ID = 'GeRq8p';   /* Tally form that collects name, email and consent */
+var GOATCOUNTER = '';
+</script>
+<style>
+:root{--bg:#FBF3F7;--ink:#24102F;--muted:#6E5B77;--line:#E8D9E6;--plum:#2A1038;--plum2:#4A1A60;--soft:#D9C3E3;--berry:#C81A60;--sun:#FFC23C;--mint:#12957B;--mintsoft:#D5F1EA;
+--display:"Bricolage Grotesque",system-ui,sans-serif;--body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 var(--body);min-height:100vh;display:flex;flex-direction:column}
+header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;max-width:640px;width:100%;margin:0 auto}
+.brand{font:800 1.3rem var(--display);letter-spacing:-.03em;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px}
+.mark{width:24px;height:24px;border-radius:7px;background:var(--berry);display:grid;place-items:center}
+.mark::after{content:"";width:11px;height:3px;border-radius:2px;background:#fff;box-shadow:0 -5px 0 #fff,0 5px 0 #fff}
+.back{background:none;border:0;font:600 .95rem var(--body);color:var(--muted);cursor:pointer;padding:8px}
+.prog{max-width:600px;width:calc(100% - 40px);margin:0 auto;height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--berry);border-radius:3px;transition:width .35s}
+main{flex:1;max-width:600px;width:100%;margin:0 auto;padding:28px 20px 40px}
+.step{display:none;animation:in .35s ease}
+.step.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+h1{font:800 clamp(1.8rem,6vw,2.4rem)/1.08 var(--display);letter-spacing:-.02em;margin:0 0 10px}
+.sub{color:var(--muted);margin:0 0 22px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:#fff;border:2px solid var(--line);border-radius:16px;padding:16px 18px;font:600 1.02rem var(--body);color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--soft)}
+.opt[aria-pressed="true"]{border-color:var(--berry);background:#FCEAF1}
+.opt .ic{width:40px;height:40px;border-radius:12px;background:var(--bg);display:grid;place-items:center;font-size:1.25rem;flex:none}
+.opt .tick{margin-left:auto;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);flex:none}
+.opt[aria-pressed="true"] .tick{background:var(--berry);border-color:var(--berry);box-shadow:inset 0 0 0 4px #FCEAF1}
+.btn{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:56px;border-radius:999px;border:0;background:var(--berry);color:#fff;font:700 1.05rem var(--body);cursor:pointer;margin-top:22px;text-decoration:none}
+.btn[disabled]{opacity:.4;cursor:default}
+select{width:100%;min-height:56px;border-radius:16px;border:2px solid var(--line);padding:0 16px;font:600 1rem var(--body);color:var(--ink);background:#fff}
+.fact{background:var(--plum);color:#fff;border-radius:24px;padding:30px 26px}
+.fact .eyebrow{font:700 .78rem var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--sun)}
+.fact h2{font:800 1.6rem/1.15 var(--display);margin:10px 0 12px}
+.fact p{color:var(--soft);margin:0}
+.fact .big{font:800 3.4rem/1 var(--display);color:var(--sun);margin:6px 0 4px}
+.sum{background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 20px;margin-top:6px}
+.sum div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.sum div:last-child{border:0}
+.sum span{color:var(--muted)}.sum b{text-align:right}
+.price{margin-top:18px;background:var(--mintsoft);border-radius:16px;padding:16px 18px;color:#0B5E4E}
+.fine{font-size:.85rem;color:var(--muted);margin-top:12px;text-align:center}
+.done{text-align:center;padding-top:30px}
+.done .ok{width:72px;height:72px;border-radius:50%;background:var(--mint);margin:0 auto 20px;display:grid;place-items:center}
+.done .ok::after{content:"";width:24px;height:13px;border-left:5px solid #fff;border-bottom:5px solid #fff;transform:rotate(-45deg) translate(2px,-3px)}
+@media (prefers-reduced-motion:reduce){.step{animation:none}.prog i{transition:none}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span>Strenda</a><button class="back" id="back" hidden>&larr; Back</button></header>
+<div class="prog" aria-hidden="true"><i id="bar"></i></div>
+<main id="quiz">
+
+<section class="step on" data-step="intro">
+  <h1>Let's find your group.</h1>
+  <p class="sub">Five quick questions, about a minute. Then we'll save your founding place in Strenda Club. It's free to save.</p>
+  <div class="fact" style="margin-top:8px"><p class="eyebrow">Founding groups</p><h2>Start together on Monday 12 January</h2><p>Small online groups, two live 30-minute sessions a week, and a coach who checks in when you miss one.</p></div>
+  <button class="btn" data-next>Let's go</button>
+</section>
+
+<section class="step" data-step="reason" data-q="single">
+  <h1>What brings you here?</h1>
+  <p class="sub">Pick the one that fits best.</p>
+  <div class="opts">
+    <button class="opt" data-v="Losing weight and want to get stronger"><span class="ic">&#9878;&#65039;</span>I'm losing weight and want to get stronger<span class="tick"></span></button>
+    <button class="opt" data-v="Started and stopped before"><span class="ic">&#128260;</span>I've started and stopped exercise before<span class="tick"></span></button>
+    <button class="opt" data-v="Perimenopause or menopause"><span class="ic">&#127800;</span>I'm going through perimenopause or menopause<span class="tick"></span></button>
+    <button class="opt" data-v="Something else"><span class="ic">&#10024;</span>Something else<span class="tick"></span></button>
+  </div>
+</section>
+
+<section class="step" data-step="fact1">
+  <div class="fact" id="fact1"></div>
+  <button class="btn" data-next>Continue</button>
+</section>
+
+<section class="step" data-step="barriers" data-q="multi">
+  <h1>What's got in the way before?</h1>
+  <p class="sub">Choose as many as you like.</p>
+  <div class="opts">
+    <button class="opt" data-v="Life got busy"><span class="ic">&#128197;</span>Life got busy<span class="tick"></span></button>
+    <button class="opt" data-v="Lost motivation"><span class="ic">&#128267;</span>I lost motivation<span class="tick"></span></button>
+    <button class="opt" data-v="Nobody noticed when I stopped"><span class="ic">&#128566;</span>Nobody noticed when I stopped<span class="tick"></span></button>
+    <button class="opt" data-v="Didn't know what to do"><span class="ic">&#129300;</span>I didn't know what to do<span class="tick"></span></button>
+    <button class="opt" data-v="Felt self-conscious"><span class="ic">&#128584;</span>I felt self-conscious<span class="tick"></span></button>
+    <button class="opt" data-v="Got bored"><span class="ic">&#128564;</span>I got bored<span class="tick"></span></button>
+  </div>
+  <button class="btn" data-next disabled>Continue</button>
+</section>
+
+<section class="step" data-step="fact2">
+  <div class="fact"><p class="eyebrow">That's what we're built for</p><h2>You won't be doing it on your own</h2><p>Your group starts together and meets twice a week. Miss your group session and your coach messages you within a day with an easier way back in. No guilt, just a plan.</p></div>
+  <button class="btn" data-next>Continue</button>
+</section>
+
+<section class="step" data-step="level" data-q="single">
+  <h1>Where are you starting from?</h1>
+  <p class="sub">Your plan starts exactly here.</p>
+  <div class="opts">
+    <button class="opt" data-v="Complete beginner"><span class="ic">&#127793;</span>Complete beginner<span class="tick"></span></button>
+    <button class="opt" data-v="Some experience"><span class="ic">&#127807;</span>I've done some exercise before<span class="tick"></span></button>
+    <button class="opt" data-v="Used to be fit"><span class="ic">&#127795;</span>I used to be fit and want it back<span class="tick"></span></button>
+  </div>
+</section>
+
+<section class="step" data-step="fact3">
+  <div class="fact"><p class="eyebrow">Your starting point is enough</p><h2>Every move has an easier version</h2><p>From home, with a sturdy chair and a little space. Seated and supported options where appropriate, and your plan moves up as you get stronger.</p></div>
+  <button class="btn" data-next>Continue</button>
+</section>
+
+<section class="step" data-step="times" data-q="multi">
+  <h1>Which group time could you make?</h1>
+  <p class="sub">30 minutes, live, the same group each week. Tick all that work.</p>
+  <div class="opts">
+    <button class="opt" data-v="Monday 7.30pm"><span class="ic">&#127769;</span>Monday 7.30pm<span class="tick"></span></button>
+    <button class="opt" data-v="Tuesday 9.30am"><span class="ic">&#9728;&#65039;</span>Tuesday 9.30am<span class="tick"></span></button>
+    <button class="opt" data-v="Wednesday 7.30pm"><span class="ic">&#127769;</span>Wednesday 7.30pm<span class="tick"></span></button>
+    <button class="opt" data-v="None of these suit me" data-only><span class="ic">&#128336;</span>None of these suit me<span class="tick"></span></button>
+  </div>
+  <p class="fine">Plus a club session for everyone on Saturday at 9am, recorded if you can't make it.</p>
+  <button class="btn" data-next disabled>Continue</button>
+</section>
+
+<section class="step" data-step="region">
+  <h1>Where in the UK are you?</h1>
+  <p class="sub">Groups are online, so anywhere works. This tells us where to start in-person meetups.</p>
+  <select id="region" aria-label="Your region">
+    <option value="">Choose your region</option>
+    <option>London</option><option>South East</option><option>South West</option><option>East of England</option><option>East Midlands</option><option>West Midlands</option><option>North West</option><option>North East</option><option>Yorkshire and the Humber</option><option>Wales</option><option>Scotland</option><option>Northern Ireland</option><option>Outside the UK</option>
+  </select>
+  <button class="btn" data-next disabled id="regionNext">Continue</button>
+</section>
+
+<section class="step" data-step="summary">
+  <h1>Your Strenda Club place</h1>
+  <p class="sub">Here's what we'll hold for you.</p>
+  <div class="sum" id="sum"></div>
+  <div class="price"><strong>&pound;29 a month</strong> (normally &pound;39), held for your first 12 months. Nothing to pay now. From 8 December you can confirm with your first month, refundable until your group starts.</div>
+  <button class="btn" id="save">Save my place, free</button>
+  <p class="fine">Only 30 founding places. Takes 20 seconds: just your name and email.</p>
+</section>
+
+<section class="step done" data-step="done">
+  <div class="ok" aria-hidden="true"></div>
+  <h1>Your place is saved.</h1>
+  <p class="sub">We'll email you on 8 December when founding places open. You're on the list first.</p>
+  <a class="btn" href="index.html">Back to Strenda</a>
+</section>
+
+</main>
+<script src="https://tally.so/widgets/embed.js" async></script>
+<script>
+(function () {
+  var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
+  var order = steps.map(function (s) { return s.dataset.step; });
+  var cur = 0, hist = [], ans = { reason: '', barriers: [], level: '', times: [], region: '' };
+  var q = new URLSearchParams(location.search);
+  var src = (q.get('source') || q.get('utm_content') || q.get('utm_source') || 'direct').replace(/[^\w-]/g, '').slice(0, 60);
+  var facts = {
+    'Losing weight and want to get stronger': ['Strength while you lose weight', 'Keep the strong, lose the rest', 'When weight comes off, you want to keep your strength. Two or three short strength sessions a week help you do exactly that, and your plan is built around it.'],
+    'Started and stopped before': ['You are not the problem', 'About half', 'of people who start a new exercise routine stop within six months. Not because they are lazy, but because most plans leave you to keep going on your own. Strenda doesn\'t.'],
+    'Perimenopause or menopause': ['Built for these years', 'Strength matters more now', 'Strength training is one of the best things you can do for your muscles and bones through perimenopause and menopause. You\'ll do it with a group who get it.'],
+    'Something else': ['Whatever brought you here', 'Your plan starts where you are', 'Tell us a little more and we\'ll build your plan around you. Every exercise has easier and harder versions.']
+  };
+  function count(name) { try { if (GOATCOUNTER && window.goatcounter && goatcounter.count) goatcounter.count({ path: 'quiz-' + name, title: name, event: true }); } catch (e) {} }
+  function show(i, push) {
+    if (push) hist.push(cur);
+    steps[cur].classList.remove('on'); cur = i; steps[cur].classList.add('on');
+    document.getElementById('bar').style.width = Math.round(cur / (steps.length - 1) * 100) + '%';
+    document.getElementById('back').hidden = cur === 0 || order[cur] === 'done';
+    window.scrollTo(0, 0); count(order[cur]);
+    var h = steps[cur].querySelector('h1,h2'); if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
+  }
+  function next() {
+    var n = cur + 1;
+    if (order[n] === 'fact1') {
+      var f = facts[ans.reason] || facts['Something else'];
+      var big = ans.reason === 'Started and stopped before';
+      document.getElementById('fact1').innerHTML = '<p class="eyebrow">' + f[0] + '</p>' + (big ? '<p class="big">' + f[1] + '</p><p>' + f[2] + '</p>' : '<h2>' + f[1] + '</h2><p>' + f[2] + '</p>');
+    }
+    if (order[n] === 'summary') buildSummary();
+    show(n, true);
+  }
+  document.getElementById('back').onclick = function () { if (hist.length) show(hist.pop(), false); };
+  document.querySelectorAll('[data-next]').forEach(function (b) { b.onclick = next; });
+  steps.forEach(function (s) {
+    var kind = s.dataset.q; if (!kind) return;
+    var key = s.dataset.step, btns = s.querySelectorAll('.opt'), go = s.querySelector('[data-next]');
+    btns.forEach(function (b) {
+      b.setAttribute('aria-pressed', 'false');
+      b.onclick = function () {
+        if (kind === 'single') {
+          btns.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+          b.setAttribute('aria-pressed', 'true'); ans[key] = b.dataset.v; setTimeout(next, 220);
+        } else {
+          var on = b.getAttribute('aria-pressed') !== 'true';
+          if (on && b.hasAttribute('data-only')) btns.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+          if (on && !b.hasAttribute('data-only')) btns.forEach(function (x) { if (x.hasAttribute('data-only')) x.setAttribute('aria-pressed', 'false'); });
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+          ans[key] = Array.prototype.filter.call(btns, function (x) { return x.getAttribute('aria-pressed') === 'true'; }).map(function (x) { return x.dataset.v; });
+          go.disabled = !ans[key].length;
+        }
+      };
+    });
+  });
+  var reg = document.getElementById('region');
+  reg.onchange = function () { ans.region = reg.value; document.getElementById('regionNext').disabled = !reg.value; };
+  function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+  function buildSummary() {
+    var t = ans.times.filter(function (x) { return x !== 'None of these suit me'; });
+    var rows = [['Your focus', ans.reason], ['Your group time', t.length ? t.join(' or ') : 'We\'ll find a time with you'], ['Starting level', ans.level], ['First session', 'Week of 12 January'], ['Where', 'Online, from home']];
+    document.getElementById('sum').innerHTML = rows.map(function (r) { return '<div><span>' + esc(r[0]) + '</span><b>' + esc(r[1]) + '</b></div>'; }).join('');
+  }
+  function answers() { return 'reason: ' + ans.reason + ' | barriers: ' + ans.barriers.join(', ') + ' | level: ' + ans.level + ' | times: ' + ans.times.join(', ') + ' | region: ' + ans.region; }
+  document.getElementById('save').onclick = function () {
+    count('save-click');
+    var hidden = { source: src, answers: answers() };
+    if (window.Tally && Tally.openPopup) {
+      Tally.openPopup(FORM_ID, { layout: 'modal', width: 520, hideTitle: false, hiddenFields: hidden, onSubmit: function () { show(order.indexOf('done'), true); count('saved'); } });
+    } else {
+      location.href = 'https://tally.so/r/' + FORM_ID + '?source=' + encodeURIComponent(hidden.source) + '&answers=' + encodeURIComponent(hidden.answers);
+    }
+  };
+  if (GOATCOUNTER) { var g = document.createElement('script'); g.async = true; g.src = '//gc.zgo.at/count.js'; g.setAttribute('data-goatcounter', 'https://' + GOATCOUNTER + '.goatcounter.com/count'); document.body.appendChild(g); }
+})();
+</script>
+</body>
+</html>
