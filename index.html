@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Strenda Club: get stronger with a small group that helps you keep going</title>
+<title>Strenda Club: you've started again enough times</title>
 <meta name="description" content="A personal strength plan, a small group that starts together and a real coach who checks in when life gets in the way. Founding groups start online on 12 January 2027.">
 <meta property="og:title" content="Strenda Club">
 <meta property="og:description" content="Get stronger with a small group that helps you keep going. Founding groups start 12 January.">
@@ -15,8 +15,8 @@
 /* Old app links (#example, #join-CODE) now live on app.html. */
 if (/^#(example|join-)/.test(location.hash)) location.replace('app.html' + location.hash);
 /* ===== SETTINGS: paste values here, nothing else needs changing ===== */
-var RESERVE_URL = '';     /* Stripe Payment Link for the £10 refundable reservation */
-var WAITLIST_URL = '';    /* Optional: Tally form, used only if RESERVE_URL is empty */
+var SAVE_URL = '';        /* Tally form: free 'save my place'. Every button uses this. */
+var PAY_URL = '';         /* Stripe £29 link, from 8 December. Leave empty until then. */
 var META_PIXEL_ID = '';   /* Meta pixel ID, e.g. '123456789012345'. Loads only after cookie consent. */
 var GOATCOUNTER = '';     /* GoatCounter code, e.g. 'strenda' for strenda.goatcounter.com. Cookie-free visit counts. */
 /* ==================================================================== */
@@ -46,7 +46,7 @@ header .in{display:flex;align-items:center;justify-content:space-between;height:
 .btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
 section{padding:72px 0}
 .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--berry)}
-.hero{padding:64px 0 56px}
+.hero{padding:72px 0 64px;background:var(--plum);color:#fff}.hero .lead{color:var(--on-plum-soft)}.hero .eyebrow{color:var(--sun)}.hero .note{color:var(--on-plum-soft)}.hero .btn.ghost{color:#fff;border-color:#fff}.hero h1{font-size:clamp(2.6rem,7vw,4.6rem)}.diff{padding:56px 0 24px}.card.big h3{font-size:1.35rem;margin-top:6px}.num{font:800 .9rem var(--display);color:var(--berry);letter-spacing:.1em}
 .hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
 .hero .lead{font-size:1.2rem;margin-top:18px;max-width:34em}
 .tag{font-family:var(--display);font-weight:600;font-size:1.25rem;margin-top:16px;color:var(--plum2)}
@@ -95,28 +95,36 @@ footer .in{display:grid;gap:10px}
 <body>
 <header><div class="in">
   <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span>Strenda</a>
-  <a class="btn small js-join" href="#founding">Reserve a place</a>
+  <a class="btn small js-join" href="#founding">Save my place</a>
 </div></header>
 
 <main id="top">
 <section class="hero"><div class="in grid">
   <div>
     <p class="eyebrow">Strenda Club &middot; Founding groups start 12 January</p>
-    <h1>Get stronger with a small group that helps you keep going.</h1>
-    <p class="tag">Build strength. Feel better. Keep going.</p>
-    <p class="lead">A personal strength plan, a small group that starts together, and a real coach who checks in when life gets in the way. For anyone who has started and stopped before.</p>
-    <div class="row"><a class="btn js-join" href="#founding">Reserve a founding place: &pound;10</a><a class="btn ghost" href="#how">See how it works</a></div>
-    <p class="note">Online, from home. Groups start 12 January. Your &pound;10 comes off your first month and is fully refundable until your group starts. 30 founding places.</p>
+    <h1>You've started again enough times.</h1>
+    <p class="lead">This time, do it with a small group and a coach who notices when you're missing. Get stronger from home, twice a week, and actually keep going.</p>
+    <div class="row"><a class="btn js-join" href="#founding">Save my founding place, free</a><a class="btn ghost" href="#how">How it works</a></div>
+    <p class="note">Free to save. &pound;29 a month from January (normally &pound;39), held for your first 12 months. Only 30 places.</p>
   </div>
-  <div class="phone"><video src="videos/sit-to-stand.mp4" muted autoplay loop playsinline preload="metadata" aria-label="A Strenda exercise: sit to stand from a chair"></video><p>Every exercise is filmed and shown step by step</p></div>
+  <div class="phone"><video src="videos/sit-to-stand.mp4" muted autoplay loop playsinline preload="metadata" aria-label="A Strenda coach demonstrating sit to stand from a chair"></video><p>Real sessions, led by a real coach</p></div>
+</div></section>
+
+<section class="diff"><div class="in">
+  <p class="tag" style="margin:0 0 18px">Build strength. Feel better. Keep going.</p>
+  <div class="ways">
+    <div class="card big"><span class="num">01</span><h3>A group that starts with you</h3><p>The same 10 to 15 people, starting on the same day. Not an app full of strangers.</p></div>
+    <div class="card big"><span class="num">02</span><h3>A coach who checks in</h3><p>Miss a session and your coach messages you within a day. No guilt, just a way back.</p></div>
+    <div class="card big"><span class="num">03</span><h3>Proof you're getting stronger</h3><p>A strength check every four weeks, so you can see it, not just hope it.</p></div>
+  </div>
 </div></section>
 
 <section style="padding-top:24px"><div class="in">
-  <h2>However you got here, you are in the right place</h2>
+  <h2>Whatever brought you here</h2>
   <div class="ways">
     <div class="card"><h3>Losing weight?</h3><p>Build strength while you lose weight, so you feel strong as well as lighter.</p></div>
     <div class="card"><h3>Started and stopped before?</h3><p>Strenda is built for people who have tried before. Most plans assume you will keep going on your own. We don't.</p></div>
-    <div class="card"><h3>Thinking about the years ahead?</h3><p>Strength for climbing stairs, carrying the shopping and keeping up with the people you love.</p></div>
+    <div class="card"><h3>Want to feel strong again?</h3><p>Strength for the stairs, the shopping, your knees and your confidence, now and for years to come.</p></div>
   </div>
 </div></section>
 
@@ -144,7 +152,7 @@ footer .in{display:grid;gap:10px}
 
 <section style="padding-top:0"><div class="in narrow">
   <h2>When the groups meet</h2>
-  <p class="note" style="font-size:1rem">Planned times for the founding groups. You choose yours straight after you reserve. Times are confirmed by 5 January, and if none of them works for you, you get your &pound;10 back.</p>
+  <p class="note" style="font-size:1rem">Planned times for the founding groups. You choose yours when you save your place. Times are confirmed by 5 January.</p>
   <div class="ways" style="grid-template-columns:repeat(2,1fr)">
     <div class="card"><h3>Your group session (choose one)</h3><p>Monday 7.30pm &middot; Tuesday 9.30am &middot; Wednesday 7.30pm<br>30 minutes, live, the same group every week.</p></div>
     <div class="card"><h3>The club session (everyone)</h3><p>Saturday 9am<br>30 minutes, live. Recorded, so you can do it later if you can't make it.</p></div>
@@ -166,16 +174,15 @@ footer .in{display:grid;gap:10px}
       <p class="eyebrow">Founding members</p>
       <h2 style="margin-top:8px">Be one of the first 30</h2>
       <p class="price" style="margin-top:20px">&pound;29<span> a month</span></p>
-      <p style="margin-top:8px"><strong>Guaranteed for your first 12 months.</strong> Limited to the first 30 places.</p>
-      <div class="row"><a class="btn js-join" href="#founding" id="joinmain">Reserve my place: &pound;10</a></div>
-      <p class="note" id="joinnote">&pound;10 now holds your place and comes off your first month, so January costs &pound;19. Fully refundable until your group starts.</p>
-      <h3 style="margin-top:26px">What happens after you reserve</h3>
+      <p style="margin-top:8px"><s style="color:var(--muted)">&pound;39</s> <strong>Your price is held for your first 12 months.</strong> That's &pound;120 saved.</p>
+      <div class="row"><a class="btn js-join" href="#founding" id="joinmain">Save my place, free</a></div>
+      <p class="note" id="joinnote">Saving a place is free and commits you to nothing. It takes 30 seconds.</p>
+      <h3 style="margin-top:26px">What happens next</h3>
       <ol class="note" style="padding-left:20px;margin-top:8px;display:grid;gap:6px">
-        <li>You pay &pound;10 securely by card, and your place is held.</li>
-        <li>You tell us which group time suits you (two minutes).</li>
-        <li>In December: a short health check and the full terms, before any monthly payment.</li>
-        <li>Early January: your first month (&pound;19 after your &pound;10) and your plan in the app.</li>
-        <li>12 January: your group starts. Then &pound;29 a month, cancel any time.</li>
+        <li>Save your place (free) and tell us which group time suits you.</li>
+        <li>From 8 December, confirm with your first &pound;29. Refundable until your group starts.</li>
+        <li>Early January: a short health check, your plan in the app, and you meet your group.</li>
+        <li>12 January: your group starts.</li>
       </ol>
     </div>
     <div>
@@ -188,8 +195,7 @@ footer .in{display:grid;gap:10px}
         <li>Home sessions in the Strenda app, every move filmed</li>
         <li>A strength check every four weeks</li>
       </ul>
-      <h3 style="margin-top:24px">Your &pound;10 reservation</h3>
-      <p class="fine" style="margin-top:8px">It holds one founding place at &pound;29 a month for 12 months, and it's deducted from your first month. <strong>It's fully refunded</strong> if you ask at any time before your group starts on 12 January, if none of the confirmed times suits you, if the health check shows Strenda Club isn't right for you yet, or if we don't start on 12 January. Refunds go back to your card within 5 working days of the request. Reserving doesn't sign you up to monthly payments; that only happens when you confirm in January.</p>
+      
       <p class="fine">Strenda Club is a monthly payment that renews until you cancel. You can cancel at any time and you'll keep your place until the end of the month you've paid for. After 12 months we'll give you at least two months' notice of any price change. Full terms are shown before you pay.</p>
     </div>
   </div>
@@ -202,17 +208,17 @@ footer .in{display:grid;gap:10px}
   <details><summary>What equipment do I need?</summary><p>A sturdy chair and a little space. Hand weights or full water bottles help later but are optional.</p></details>
   <details><summary>Do I have to be on camera?</summary><p>No. Your camera is optional. You can follow along and ask questions without being on screen. If you turn it on, your coach can check your technique.</p></details>
   <details><summary>When are the sessions?</summary><p>Group sessions are planned for Monday 7.30pm, Tuesday 9.30am or Wednesday 7.30pm (you choose one), plus the club session on Saturday at 9am, which is recorded. Times are confirmed by 5 January.</p></details>
-  <details><summary>Is the &pound;10 really refundable?</summary><p>Yes. Ask any time before your group starts on 12 January and it goes back to your card within 5 working days. It's also refunded automatically if the times don't suit you, if the health check shows it isn't right for you yet, or if we don't start on 12 January.</p></details>
+  <details><summary>Do I pay anything now?</summary><p>No. Saving your place is free. From 8 December you can confirm it with your first &pound;29, which is refundable until your group starts on 12 January.</p></details>
   <details><summary>What happens if I miss a session?</summary><p>Your coach will message you within a working day to help you back in, with an easier option if you need one. You won't be told off. Life happens.</p></details>
   <details><summary>I'm losing weight. Is this a diet programme?</summary><p>No. Strenda is about building strength, whatever your goal. If you're losing weight in any way, we'll help you build strength alongside it. We don't give advice on medication or diets; your GP, pharmacist or dietitian is the right person for that.</p></details>
   <details><summary>I have a health condition or an injury. Can I join?</summary><p>Often, yes. We'll ask about your health before you start, and we may ask you to check with your GP first. Exercises are adapted where appropriate.</p></details>
-  <details><summary>Is it only for women?</summary><p>Our first groups are mostly women aged 40 to 60, because that's who has asked for it. Everyone is welcome to join the list, and we plan to open more groups.</p></details>
+  <details><summary>Who is Strenda for?</summary><p>Anyone who wants to get stronger and has found it hard to keep going, whatever your age or fitness. Our first groups are mostly women, and we will open more groups as we grow.</p></details>
   <details><summary>How do I cancel?</summary><p>Any time, in a couple of clicks. You keep your place until the end of the month you've paid for.</p></details>
 </div></section>
 </main>
 
 <footer><div class="in">
-  <p><strong>Privacy.</strong> If you reserve a place, we use your details only to run Strenda Club and contact you about it. Card payments are handled by Stripe; we never see your card number. We count visits without cookies. Advertising cookies (Meta) are used only if you accept them. We never sell your details, and you can ask us to delete them at any time.</p>
+  <p><strong>Privacy.</strong> If you save a place, we use your details only to run Strenda Club and contact you about it. Card payments are handled by Stripe; we never see your card number. We count visits without cookies. Advertising cookies (Meta) are used only if you accept them. We never sell your details, and you can ask us to delete them at any time.</p>
   <p>Strenda gives exercise guidance. It does not give medical advice. Speak to your GP, pharmacist or prescriber about your health, medication or diet.</p>
   <p>Already a member? <a href="app.html">Open the Strenda app</a></p>
   <p>&copy; Strenda 2026</p>
@@ -231,16 +237,13 @@ footer .in{display:grid;gap:10px}
     document.getElementById('cyes').onclick = function () { try { localStorage.setItem('consent', 'yes'); } catch (e) {} box.hidden = true; pixel(); };
     document.getElementById('cno').onclick = function () { try { localStorage.setItem('consent', 'no'); } catch (e) {} box.hidden = true; }; } }
   if (GOATCOUNTER) { var g = document.createElement('script'); g.async = true; g.src = '//gc.zgo.at/count.js'; g.setAttribute('data-goatcounter', 'https://' + GOATCOUNTER + '.goatcounter.com/count'); document.body.appendChild(g); }
-  function event(name) { try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: name, title: name, event: true }); } catch (e) {} try { if (window.fbq) fbq('track', 'InitiateCheckout', { value: 10, currency: 'GBP' }); } catch (e) {} }
+  function event(name) { try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: name, title: name, event: true }); } catch (e) {} try { if (window.fbq) fbq('track', PAY_URL ? 'InitiateCheckout' : 'Lead'); } catch (e) {} }
   var links = document.querySelectorAll('.js-join');
-  if (RESERVE_URL) {
-    var url = RESERVE_URL + (RESERVE_URL.indexOf('?') < 0 ? '?' : '&') + 'client_reference_id=' + encodeURIComponent(src || 'direct');
-    links.forEach(function (a) { a.href = url; a.addEventListener('click', function () { event('reserve-click'); }); });
-  } else if (WAITLIST_URL) {
-    links.forEach(function (a) { a.href = WAITLIST_URL; a.target = '_blank'; a.rel = 'noopener'; a.textContent = a.id === 'joinmain' ? 'Join the founding list' : 'Join the list'; });
-    document.getElementById('joinnote').textContent = 'Reservations open shortly. Join the list and you will hear first.';
+  var target = PAY_URL ? PAY_URL + (PAY_URL.indexOf('?') < 0 ? '?' : '&') + 'client_reference_id=' + encodeURIComponent(src || 'direct') : SAVE_URL ? SAVE_URL + (SAVE_URL.indexOf('?') < 0 ? '?' : '&') + 'source=' + encodeURIComponent(src || 'direct') : '';
+  if (target) {
+    links.forEach(function (a) { a.href = target; a.addEventListener('click', function () { event(PAY_URL ? 'pay-click' : 'save-click'); }); });
   } else {
-    var b = document.getElementById('joinmain'); b.textContent = 'Reservations open this week'; b.removeAttribute('href'); b.setAttribute('aria-disabled', 'true'); b.style.opacity = '.6';
+    var b = document.getElementById('joinmain'); b.textContent = 'Places open in a few days'; b.removeAttribute('href'); b.setAttribute('aria-disabled', 'true'); b.style.opacity = '.6';
   }
 })();
 </script>
